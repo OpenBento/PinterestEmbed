@@ -1,0 +1,28 @@
+{% load sekizai_tags filertags %}
+{% comment %}
+<!-- SmartSnippets Variables
+board_height=TextField
+board_width=TextField
+pinterest_board_1_url = TextField
+pinterest_board_2_url = TextField
+pinterest_board_3_url = TextField
+
+-->
+{% endcomment %}
+
+{% addtoblock "js" %}
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+
+{% endaddtoblock %}
+
+<a data-pin-do="embedBoard" href="{{pinterest_board_1_url}}" data-pin-scale-width="80" data-pin-scale-height="{{board_height}}" data-pin-board-width="{{board_width}}"></a>
+
+{% if pinterest_board_2_url %}
+
+<a data-pin-do="embedBoard" href="{{pinterest_board_2_url}}" data-pin-scale-width="80" data-pin-scale-height="{{board_height}}" data-pin-board-width="{{board_width}}"></a>
+   {% endif %}
+
+{% if pinterest_board_3_url %}
+
+<a data-pin-do="embedBoard" href="{{pinterest_board_3_url}}" data-pin-scale-width="80" data-pin-scale-height="{{board_height}}" data-pin-board-width="{{board_width}}"></a>
+   {% endif %}
